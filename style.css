@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.game-area {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px 20px;
+    backdrop-filter: blur(10px);
+}
+
+.chest-container {
+    margin-bottom: 30px;
+}
+
+.chest {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    margin: 0 auto 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.chest:hover {
+    transform: scale(1.05);
+}
+
+.chest:active {
+    transform: scale(0.95);
+}
+
+.chest-body {
+    font-size: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.chest-lid {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: #ffd700;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.5s;
+    z-index: 2;
+}
+
+.chest.open .chest-lid {
+    transform: translateX(-50%) rotate(-45deg);
+    transform-origin: left bottom;
+}
+
+.reward-message {
+    background: rgba(255, 215, 0, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.progress-label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    width: 0%;
+    transition: width 0.3s;
+    border-radius: 10px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.click-btn, .ad-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+.click-btn {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+    color: white;
+}
+
+.click-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.ad-btn {
+    background: linear-gradient(135deg, #4ECDC4, #44A08D);
+    color: white;
+}
+
+.stats {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.stats div {
+    margin-bottom: 5px;
+}
+
+/* Модальное окно рекламы */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+}
+
+.ad-placeholder {
+    background: #f0f0f0;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px dashed #ccc;
+}
+
+.ad-timer {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+.close-ad-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-ad-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none !important;
+}

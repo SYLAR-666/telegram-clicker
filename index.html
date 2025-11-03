@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Chest Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Сундук с сокровищами</h1>
+            <div id="userInfo" class="user-info">
+                <span id="userName">Гость</span>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="chest-container">
+                <div id="chest" class="chest">
+                    <div class="chest-lid"></div>
+                    <div class="chest-body">📦</div>
+                </div>
+                <div id="rewardMessage" class="reward-message hidden">
+                    🎉 Сундук открыт! +10 монет!
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-label">
+                    Прогресс: <span id="progressValue">0</span>%
+                </div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="clickBtn" class="click-btn">Открыть сундук</button>
+                <button id="adBtn" class="ad-btn hidden">Смотреть рекламу для нового сундука</button>
+            </div>
+
+            <div class="stats">
+                <div>Открыто сундуков: <span id="chestsOpened">0</span></div>
+                <div>Всего монет: <span id="totalCoins">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно рекламы -->
+    <div id="adModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Рекламное видео</h3>
+            <div class="ad-placeholder">
+                🎬 Здесь будет рекламное видео
+                <div class="ad-timer">Осталось: <span id="adTimer">5</span> сек.</div>
+            </div>
+            <button id="closeAdBtn" class="close-ad-btn" disabled>Закрыть через 5 сек.</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
